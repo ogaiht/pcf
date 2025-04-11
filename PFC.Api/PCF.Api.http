@@ -1,0 +1,6 @@
+@PCF.Api_HostAddress = http://localhost:5048
+
+GET {{PCF.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

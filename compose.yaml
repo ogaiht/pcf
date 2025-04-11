@@ -1,0 +1,6 @@
+﻿services:
+  pcf.api:
+    image: pcf.api
+    build:
+      context: .
+      dockerfile: PCF.Api/Dockerfile
