@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\PFC.Application\PFC.Application.csproj" />
+      <ProjectReference Include="..\PFC.Data.EntityFramework\PFC.Data.EntityFramework.csproj" />
+    </ItemGroup>
+
 </Project>

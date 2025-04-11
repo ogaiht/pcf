@@ -12,22 +12,22 @@ public abstract class InMemoryRepository<TEntity, TId>(IDataSource<TId> dataSour
     protected IDataSource<TId> DataSource => dataSource;
     
     protected IDataCollection<TId, TEntity> Collection => DataSource.Get<TEntity>();
-    public virtual Task<TId> CreateAsync(TEntity entity)
+    public virtual Task<TId> CreateAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
         return DataSource.Get<TEntity>().AddAsync(entity);
     }
 
-    public virtual Task<TEntity?> GetAsync(TId id)
+    public virtual Task<TEntity?> GetAsync(TId id, CancellationToken cancellationToken = default)
     {
         return DataSource.Get<TEntity>().GetAsync(id);
     }
 
-    public virtual Task<bool> UpdateAsync(TEntity entity)
+    public virtual Task<bool> UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
         return DataSource.Get<TEntity>().UpdateAsync(entity);
     }
 
-    public virtual Task<bool> DeleteAsync(TId id)
+    public virtual Task<bool> DeleteAsync(TId id, CancellationToken cancellationToken = default)
     {
         return DataSource.Get<TEntity>().DeleteAsync(id);
     }
